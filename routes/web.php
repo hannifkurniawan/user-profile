@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages/index');
-});
+Route::get('/', 'Web\PageController@index');
 
-Route::get('/register', function () {
-    return view('pages/register');
-});
+Route::get('/register', 'Web\PageController@register');
+
+Route::get('/dashboard', 'Web\UserController@index');
+
+Route::get('/user/{id}/edit-profile', 'Web\UserController@editProfile');
+
+Route::get('/user/{id}/edit-password', 'Web\UserController@editPassword');

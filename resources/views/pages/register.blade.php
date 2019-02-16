@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Home')
+@section('title', 'Register')
 
 @section('styles')
 
@@ -26,7 +26,7 @@
                 <form action="">
                     <div class="form-group">
                         <label for="">Name</label>
-                        <input type="email" class="form-control" name="name" placeholder="Your Name">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name">
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
@@ -35,7 +35,7 @@
                     
                     <div class="form-group">
                         <label for="">Phone Number</label>
-                        <input type="email" class="form-control" name="name" placeholder="Your Phone Number">
+                        <input type="text" class="form-control" name="phone-nummber" placeholder="Your Phone Number">
                     </div>
                     <div class="form-group">
                         <label for="">Password</label>
