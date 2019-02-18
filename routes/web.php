@@ -22,5 +22,5 @@
 // Route::get('/user/{id}/edit-password', 'Web\UserController@editPassword');
 
 Route::get('/{any}', function () {
-    return view('post');
+    return view('user-profile');
   })->where('any', '.*');
