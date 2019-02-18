@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/', 'Web\PageController@index');
+// Route::get('/', 'Web\PageController@index');
 
-Route::get('/register', 'Web\PageController@register');
+// Route::get('/register', 'Web\PageController@register');
 
-Route::get('/dashboard', 'Web\UserController@index');
+// Route::get('/dashboard', 'Web\UserController@index');
 
-Route::get('/user/{id}/edit-profile', 'Web\UserController@editProfile');
+// Route::get('/user/{id}/edit-profile', 'Web\UserController@editProfile');
 
-Route::get('/user/{id}/edit-password', 'Web\UserController@editPassword');
+// Route::get('/user/{id}/edit-password', 'Web\UserController@editPassword');
+
+Route::get('/{any}', function () {
+    return view('post');
+  })->where('any', '.*');
