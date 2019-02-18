@@ -33,7 +33,7 @@
                         <dd class="col-sm-9"><input type="email" class="form-control" name="email" placeholder="Your Email" value="hannif.kurniawan@gmail.com" readonly></dd>
                         
                         <dt class="col-sm-3">Phone Number</dt>
-                        <dd class="col-sm-9"><input type="phoneNumber" class="form-control" name="phone-number" placeholder="Your Phone Number" value="085722552569"></dd>
+                        <dd class="col-sm-9"><input type="phoneNumber" class="form-control" name="phone_number" placeholder="Your Phone Number" value="085722552569"></dd>
                         
                         <dt class="col-sm-3">Address</dt>
                         <dd class="col-sm-9"><textarea name="address" id="" class="form-control" cols="30" rows="10">Sompok Katapang</textarea></dd>

@@ -35,7 +35,7 @@
                     
                     <div class="form-group">
                         <label for="">Phone Number</label>
-                        <input type="text" class="form-control" name="phone-nummber" placeholder="Your Phone Number">
+                        <input type="text" class="form-control" name="phone_nummber" placeholder="Your Phone Number">
                     </div>
                     <div class="form-group">
                         <label for="">Password</label>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Password Confirmation</label>
-                        <input type="password" class="form-control" name="password-confirmation"  placeholder="Your Password">
+                        <input type="password" class="form-control" name="password_confirmation"  placeholder="Your Password">
                     </div>
                     <div class="d-flex justify-content-between">
                         <a class="btn btn-link" href="/">Log In</a>

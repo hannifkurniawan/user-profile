@@ -24,6 +24,7 @@
             </div>
             <div class="card-body">
                 <form action="">
+                {{-- <form id="register-form" class="form-horizontal" method="POST" action="{{ route('login') }}"> --}}
                     <div class="form-group">
                         <label for="">Email</label>
                         <input type="email" class="form-control" placeholder="Your Email">
@@ -52,6 +53,27 @@
 
 @section('scripts')
 
-	@include('layouts.includes.scripts')
+    @include('layouts.includes.scripts')
+    <script>
+         $('#register-form').submit(function(e){
+            
+            // Prevent normal form submission, we well do in JS instead
+            e.preventDefault();
+            // Get form data
+            var data = {
+                    name: $('[name=email]').val(),
+                    password: $('[name=password]').val(),
+            };
+            // Send the request
+            $.post($('this').attr('action'), data, function(response) {
+                if (response.success) {
+                    // If register success, go to home
+                    console.log('success');
+                    
+                    window.location.replace("{{ route('home') }}");
+                }
+            });
+        });
+    </script>
 
 @endsection

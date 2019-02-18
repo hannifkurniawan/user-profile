@@ -36,10 +36,10 @@
                         <dd class="col-sm-9"><input type="password" class="form-control" name="password" placeholder="Your Password" value=""></dd>
 
                         <dt class="col-sm-3">New Password</dt>
-                        <dd class="col-sm-9"><input type="password" class="form-control" name="new-password" placeholder="Your New Password" value=""></dd>
+                        <dd class="col-sm-9"><input type="password" class="form-control" name="new_password" placeholder="Your New Password" value=""></dd>
 
                         <dt class="col-sm-3">New Password Confirmation</dt>
-                        <dd class="col-sm-9"><input type="password" class="form-control" name="new-password-confirmation" placeholder="New Password Confirmation" value=""></dd>
+                        <dd class="col-sm-9"><input type="password" class="form-control" name="new_password_confirmation" placeholder="New Password Confirmation" value=""></dd>
                                                 
                     </dl>
                     <input type="submit" class="btn btn-primary float-right" value="Update Password">
