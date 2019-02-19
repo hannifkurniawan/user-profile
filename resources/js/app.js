@@ -27,22 +27,31 @@ const routes = [
   {
       name: 'register',
       path: '/register',
-      component: RegisterComponent
+      component: RegisterComponent,
   },
   {
       name: 'dashboard',
       path: '/dashboard',
-      component: DashboardComponent
+      component: DashboardComponent,
+      meta: {
+        requiresAuth: true
+    }
   },
   {
-      name: 'edit',
+      name: 'edit-profile',
       path: '/users/:id/edit-profile',
-      component: EditProfileComponent
+      component: EditProfileComponent,
+      meta: {
+        requiresAuth: true
+    }
   },
   {
-    name: 'edit',
+    name: 'edit-password',
     path: '/users/:id/edit-password',
-    component: EditPasswordComponent
+    component: EditPasswordComponent,
+    meta: {
+        requiresAuth: true
+    }
 }
 ];
 
