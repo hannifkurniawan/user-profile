@@ -6,19 +6,17 @@
             <div class="card-body">
                 <dl class="row">
                     <dt class="col-sm-3">Name</dt>
-                    <dd class="col-sm-9">hannif</dd>
+                    <dd class="col-sm-9">{{ user.name }}</dd>
 
                     <dt class="col-sm-3">Email</dt>
-                    <dd class="col-sm-9">hannif@gmail.com</dd>
+                    <dd class="col-sm-9">{{ user.email }}</dd>
 
                     <dt class="col-sm-3">Phone Number</dt>
-                    <dd class="col-sm-9">085722552569</dd>
+                    <dd class="col-sm-9">{{ user.phone_number }}</dd>
 
                     <dt class="col-sm-3">Address</dt>
-                    <dd class="col-sm-9">Sompok Katapang</dd>
+                    <dd class="col-sm-9">{{ user.address }}</dd>
 
-                    <dt class="col-sm-3 text-truncate">Register Date</dt>
-                    <dd class="col-sm-9">3 Times without this sign in</dd>
                 </dl>
             </div>
         </div>
@@ -26,8 +24,28 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+      data() {
+        return {
+          user: [],
         }
-    }
+      },
+      created() {
+        const auth = {
+            headers: {Authorization:'Bearer ' + localStorage.getItem('user-token')} 
+        }
+        let currentUser = JSON.parse(localStorage.getItem('user'));
+        let user_id = currentUser['id'];
+        
+        this.axios.get(`/api/users/${user_id}`, auth)
+        .then(response => {
+          this.user = response.data.data;
+        })
+        .catch(error => {
+            console.log(error.response)
+        });
+      },
+      methods: {
+        
+      }
+  }
 </script>

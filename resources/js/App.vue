@@ -17,6 +17,12 @@
         <li class="nav-item">
           <router-link to="/users/1/edit-password" class="nav-link">Edit Password</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="#" class="nav-link">Logout</router-link>
+        </li>
+        <!-- <li v-if="$auth.check()" class="pull-right">
+                        <a href="#" @click.prevent="$auth.logout()">Logout</a>
+        </li> -->
       </ul>
     </nav><br />
     <transition name="fade">

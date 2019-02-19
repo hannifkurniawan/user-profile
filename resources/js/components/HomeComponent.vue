@@ -9,15 +9,15 @@
                 <form action="">
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" placeholder="Your Email">
+                        <input type="email" class="form-control" placeholder="Your Email" v-model="email">
                     </div>
                     <div class="form-group">
                         <label for="">Password</label>
-                        <input type="password" class="form-control" placeholder="Your Password">
+                        <input type="password" class="form-control" placeholder="Your Password" v-model="password">
                     </div>
                     <div class="d-flex justify-content-between">
                         <a class="btn btn-link" href="/register">Register</a>
-                        <input type="submit" class="btn btn-primary" value="Sign In">
+                        <input type="submit" class="btn btn-primary" value="Sign In" @click="handleSubmit">
                     </div>
                 </form>
             </div>
@@ -27,8 +27,36 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+            data() {
+                return {
+                    email: "",
+                    password: ""
+                }
+            },
+            methods: {
+                
+                handleSubmit(e) {
+                    e.preventDefault()
+                    
+                    let email = this.email
+                    let password = this.password
+
+                    axios.post('api/login', {
+                        email, password
+                    })
+                    .then(response => {
+                        localStorage.setItem('user-token', response.data.data['token'])
+                        
+                        let $user = JSON.stringify(response.data.data['user']);
+                        
+                        localStorage.setItem('user', $user)
+                        
+                        this.$router.push('dashboard');    
+                    })
+                    .catch(error => {
+                        console.log(error.response)
+                    });;
+                }
+            }
         }
-    }
 </script>

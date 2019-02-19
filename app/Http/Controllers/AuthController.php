@@ -79,12 +79,15 @@ class AuthController extends Controller
                 'message' => 'Failed to login, please try again.'
             ], 500);
         }
+        // dd($token);
+        $currentUser = JWTAuth::user();
 
         return response()->json([
             'status' => 'success',
             'message' => 'Login success',
             'data'=> [
-                'token' => $token
+                'token' => $token,
+                'user' => $currentUser
             ]
         ]);
     }

@@ -87,9 +87,10 @@ class UserController extends Controller
      */
     public function update(Request $request,User $user)
     {
-        $credentials = $request->only('phone_number', 'address');
+        $credentials = $request->only('name','phone_number', 'address');
 
         $rules = [
+            'name' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:14', 'unique:users,phone_number,'.$user->id],
             'address' => ['string'],
         ];
@@ -110,7 +111,7 @@ class UserController extends Controller
             ], 403);
         }
 
-        $user->update($request->only(['phone_number', 'address']));
+        $user->update($request->only(['name','phone_number', 'address']));
 
         return response()->json([
             'status' => 'success', 

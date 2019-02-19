@@ -33,25 +33,16 @@ const routes = [
       name: 'dashboard',
       path: '/dashboard',
       component: DashboardComponent,
-      meta: {
-        requiresAuth: true
-    }
   },
   {
       name: 'edit-profile',
       path: '/users/:id/edit-profile',
       component: EditProfileComponent,
-      meta: {
-        requiresAuth: true
-    }
   },
   {
     name: 'edit-password',
     path: '/users/:id/edit-password',
     component: EditPasswordComponent,
-    meta: {
-        requiresAuth: true
-    }
 }
 ];
 
