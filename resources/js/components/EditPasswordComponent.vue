@@ -5,6 +5,10 @@
             </div>
             <div class="card-body">
                 <form action="">
+                    <p v-if="errors.length">
+                        <b>Please correct the following error(s):</b>
+                        <div v-for="error in errors" class="alert alert-danger" role="alert">{{ error[0] }}</div>
+                    </p>
                     <dl class="row">
                         
                         <dt class="col-sm-3">Name</dt>
@@ -36,7 +40,8 @@
             user: [],
             current_password: "",
             password: "",
-            password_confirmation: ""
+            password_confirmation: "",
+            errors: [],
         }
       },
       created() {
@@ -60,8 +65,6 @@
             let current_password = this.current_password
             let password = this.password
             let password_confirmation = this.password_confirmation
-            console.log(current_password, password, password_confirmation);
-            
            
             const auth = {
                 headers: {Authorization:'Bearer ' + localStorage.getItem('user-token')} 
@@ -76,7 +79,11 @@
                 this.$router.push('/dashboard');    
             })
             .catch(error => {
-                console.log('error',error.response)
+                let errorMessages = error.response.data.message;
+                    var result = Object.keys(error.response.data.message).map(function(key) {
+                      return error.response.data.message[key];
+                    });
+                this.errors = result;
             });
         }
       }

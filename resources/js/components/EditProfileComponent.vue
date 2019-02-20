@@ -5,8 +5,11 @@
             </div>
             <div class="card-body">
                 <form action="">
+                    <p v-if="errors.length">
+                        <b>Please correct the following error(s):</b>
+                        <div v-for="error in errors" class="alert alert-danger" role="alert">{{ error[0] }}</div>
+                    </p>
                     <dl class="row">
-                        
                         <dt class="col-sm-3">Name</dt>
                         <dd class="col-sm-9"><input type="text" class="form-control" name="name" placeholder="Your Name" v-if="user" v-model="user.name" required></dd>
                         
@@ -31,6 +34,7 @@
       data() {
         return {
           user: [],
+          errors: [],
         }
       },
       created() {
@@ -67,11 +71,14 @@
                 name, phone_number, address
             }, auth)
             .then(response => {
-                console.log(response, response.status);
                 this.$router.push('/dashboard');    
             })
             .catch(error => {
-                console.log(error.response)
+                let errorMessages = error.response.data.message;
+                    var result = Object.keys(error.response.data.message).map(function(key) {
+                      return error.response.data.message[key];
+                    });
+                this.errors = result;
             });
         }
     }

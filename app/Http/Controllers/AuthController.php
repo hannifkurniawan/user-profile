@@ -68,9 +68,14 @@ class AuthController extends Controller
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
+
+                $messages = [
+                    'error' => ['We can`t find an account with this credentials.'],
+                ];
+
                 return response()->json([
                     'status' => 'error', 
-                    'message' => 'We can`t find an account with this credentials.'
+                    'message' => $messages,
                 ], 401);
             }
         } catch (JWTException $e) {
@@ -79,7 +84,6 @@ class AuthController extends Controller
                 'message' => 'Failed to login, please try again.'
             ], 500);
         }
-        // dd($token);
         $currentUser = JWTAuth::user();
 
         return response()->json([
