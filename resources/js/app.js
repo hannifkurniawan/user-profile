@@ -36,12 +36,12 @@ const routes = [
   },
   {
       name: 'edit-profile',
-      path: '/users/:id/edit-profile',
+      path: '/users/edit-profile',
       component: EditProfileComponent,
   },
   {
     name: 'edit-password',
-    path: '/users/:id/edit-password',
+    path: '/users/edit-password',
     component: EditPasswordComponent,
 }
 ];

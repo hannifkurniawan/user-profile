@@ -38038,7 +38038,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "nav-link",
-                        attrs: { to: "/users/1/edit-profile" }
+                        attrs: { to: "/users/edit-profile" }
                       },
                       [_vm._v("Edit Profile")]
                     )
@@ -38056,7 +38056,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "nav-link",
-                        attrs: { to: "/users/1/edit-password" }
+                        attrs: { to: "/users/edit-password" }
                       },
                       [_vm._v("Edit Password")]
                     )
@@ -38069,7 +38069,10 @@ var render = function() {
               _vm.auth
                 ? _c(
                     "button",
-                    { staticClass: "nav-link", on: { click: _vm.logout } },
+                    {
+                      staticClass: "btn text-white-50",
+                      on: { click: _vm.logout }
+                    },
                     [_vm._v("Logout")]
                   )
                 : _vm._e()
@@ -53754,11 +53757,11 @@ var routes = [{
   component: _components_DashboardComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
   name: 'edit-profile',
-  path: '/users/:id/edit-profile',
+  path: '/users/edit-profile',
   component: _components_EditProfileComponent_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, {
   name: 'edit-password',
-  path: '/users/:id/edit-password',
+  path: '/users/edit-password',
   component: _components_EditPasswordComponent_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({

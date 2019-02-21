@@ -12,13 +12,13 @@
           <router-link  v-if="auth" to="/dashboard" class="nav-link">Dashboard</router-link>
         </li>
         <li class="nav-item">
-          <router-link  v-if="auth" to="/users/1/edit-profile" class="nav-link">Edit Profile</router-link>
+          <router-link  v-if="auth" to="/users/edit-profile" class="nav-link">Edit Profile</router-link>
         </li>
         <li class="nav-item">
-          <router-link v-if="auth"  to="/users/1/edit-password" class="nav-link">Edit Password</router-link>
+          <router-link v-if="auth"  to="/users/edit-password" class="nav-link">Edit Password</router-link>
         </li>
         <li class="nav-item">
-          <button v-if="auth" class="nav-link" @click="logout">Logout</button>
+          <button v-if="auth" class="btn text-white-50" @click="logout">Logout</button>
         </li>
       </ul>
     </nav><br />
