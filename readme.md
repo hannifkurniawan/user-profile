@@ -11,37 +11,20 @@ Before installing and running you need to install these first :
 
 To install Homecare24 Caretaker Backend follow these steps :
 1. Clone this repository
-```bash
-git clone https://gitlab.com/homecare24-backend/ct-backend
-```
+
 2. cd to clone directory result 
-```bash
-cd ct-backend
-```
-3. Install dependencies using glide
-```bash
-glide install
-```
-4. To run from local database server, write new `env` file named `dev.env` and copy content from `env.sample`. Change the database config value (indicated by `DB_` prefix in the env file key) using your local database config
 
-## Running App Server
-Run backend service main script 
-```bash
-go run main.go
-```
+3. Update dependencies
 
-You can also ease development cycle by hoatloading changes using go-watcher package. Install from https://github.com/canthefason/go-watcher. If you're using watcher, you can run 
-```bash
-watcher
-```
-from the project root directory
+4. To run from local database server, write new `env` file named `.env` and copy content from `env.sample`. Change the database config value using your local database config
 
-## Supported Environments
-Currently, this project supports two additional environment, `staging` and `prod` for staging and production deployment. To run app server in staging environment, execute
-```bash
-go run main.go staging
-```
-To run app server in production environment, execute
-```bash
-go run main.go prod
-```
+## Features
+1. Register
+
+2. Login
+
+3. Dashboard
+
+4. Update Profile
+
+5. Change Password
